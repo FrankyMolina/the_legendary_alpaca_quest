@@ -13,13 +13,14 @@ const game = {
         this.canvas = document.querySelector('canvas');
         this.ctx = this.canvas.getContext('2d');
         this.setDimensions();
+        let board = new Board(this.ctx, this.width, this.height)
         //this.background = new Background(this.ctx, this.width, this.height, this.src);
         //this.bird = new Bird(this.ctx, this.width, this.height, this.keys),
        // this.obstaclesTop = new obstaclesTop(this.ctx, this.width, this.height);
         
         
         //this.start();
-        
+        board.readBluePrint();
     },
 
     
