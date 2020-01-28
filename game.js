@@ -1,29 +1,38 @@
 const game = {
 
-    canvas: undefined,
-    ctx: undefined,
-    width: undefined,
-    height: undefined,
-    
-   
-   
-   
-     
+    canvas: null,
+    ctx: null,
+    width: null,
+    height: null,
+
+
+
+
+
     init() {
         this.canvas = document.querySelector('canvas');
         this.ctx = this.canvas.getContext('2d');
+
         this.setDimensions();
-        let board = new Board(this.ctx, this.width, this.height)
+
+        this.board = new Board(this.ctx, this.width, this.height);
+        this.player = new Player(this.ctx, this.width, this.height);
+
+
+        
+
+
+
         //this.background = new Background(this.ctx, this.width, this.height, this.src);
         //this.bird = new Bird(this.ctx, this.width, this.height, this.keys),
-       // this.obstaclesTop = new obstaclesTop(this.ctx, this.width, this.height);
-        
-        
-        //this.start();
-        board.readBluePrint();
+        // this.obstaclesTop = new obstaclesTop(this.ctx, this.width, this.height);
+
+
+        this.start();
+
     },
 
-    
+
     setDimensions() {
         this.width = 600;
         this.height = 600;
@@ -32,23 +41,27 @@ const game = {
 
     },
 
-    /*clear() {
+    clear() {
         this.ctx.clearRect(0, 0, this.width, this.height);
 
-    }
+    },
 
     start() {
         this.interval = setInterval(() => {
             this.clear();
-            //this.background.move();
-            this.background.draw();
-           // this.bird.move();
-           // this.obstaclesTop.draw();
-           // this.bird.draw();
+
+
+            this.board.readBluePrint();
+            this.player.draw();
+
+            
+            this.player.move();
+            this.player.draw();
+
 
 
         }, 1000 / 60)
 
-    },*/
+    },
 
 }
