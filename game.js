@@ -17,6 +17,7 @@ const game = {
 
         this.board = new Board(this.ctx, this.width, this.height);
         this.player = new Player(this.ctx, this.width, this.height);
+        this.wall = new Walls(this.ctx, this.width, this.height);
 
 
         
@@ -49,19 +50,27 @@ const game = {
     start() {
         this.interval = setInterval(() => {
             this.clear();
-
-
-            this.board.readBluePrint();
-            this.player.draw();
+            this.drawAll()
+            this.moveAll()
+            this.player.collision();
 
             
-            this.player.move();
-            this.player.draw();
+            
 
 
 
         }, 1000 / 60)
 
     },
+
+    drawAll(){
+        this.board.draw();
+        this.player.draw();
+        this.wall.draw();
+    },
+
+    moveAll(){
+        this.player.move();
+    }
 
 }

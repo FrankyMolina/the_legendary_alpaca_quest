@@ -17,7 +17,7 @@ wheat: E0DCB3
 
 #main-container {
     width: 600px;
-    height: 660px;
+    height: 670px;
 
     margin-right: 10px;
     margin-top: 10px;
@@ -66,6 +66,10 @@ body {
 
 ul {
     padding-bottom: 2rem;
+}
+
+ul li {
+  font-size: 20px;
 }
 
 canvas {

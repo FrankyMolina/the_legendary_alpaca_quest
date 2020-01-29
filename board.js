@@ -34,7 +34,7 @@ class Board {
 
     }
 
-    readBluePrint() { //draw Lvl.
+    draw() { //draw Lvl.
 
 
         for (let i = 0; i < this.lvlBluePrint.length; i++) {
@@ -54,7 +54,7 @@ class Board {
 
                         break;*/
 
-                    case 1:
+                    /*case 1:
                         this.x = j * this.cellSide;
                         this.y = i * this.cellSide;
 
@@ -63,7 +63,7 @@ class Board {
                         this.ctx.beginPath();
                         this.ctx.fillStyle = this.cellColor;
                         this.ctx.fillRect(this.x, this.y, this.cellSide, this.cellSide);
-                        break;
+                        break;*/
                     case 2:
                         this.x = j * this.cellSide;
                         this.y = i * this.cellSide;
